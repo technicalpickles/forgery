@@ -38,11 +38,11 @@ protected
   end
 
   def self.external_path_to_format(format)
-    RAILS_ROOT + '/lib/forgery/formats/' + format.to_s if defined?(RAILS_ROOT)
+    File.join(RAILS_ROOT, 'lib', 'forgery', 'formats', format.to_s) if defined?(RAILS_ROOT)
   end
 
   def self.internal_path_to_format(format)
-    File.dirname(__FILE__) + '/formats/' + format.to_s
+    File.join(File.dirname(__FILE__), 'formats', format.to_s)
   end
 
   def self.path_to_dictionary(dictionary)
@@ -54,10 +54,10 @@ protected
   end
 
   def self.external_path_to_dictionary(dictionary)
-    RAILS_ROOT + '/lib/forgery/dictionaries/' + dictionary.to_s if defined?(RAILS_ROOT)
+    File.join(RAILS_ROOT, 'lib', 'forgery', 'dictionaries', dictionary.to_s) if defined?(RAILS_ROOT)
   end
 
   def self.internal_path_to_dictionary(dictionary)
-    File.dirname(__FILE__) + '/dictionaries/' + dictionary.to_s
+    File.join(File.dirname(__FILE__), 'dictionaries', dictionary.to_s)
   end
 end
